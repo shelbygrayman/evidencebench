@@ -1,0 +1,1 @@
+{"name":"evidencebench","version":"0.1.0","private":true,"type":"module","description":"Reproducible retrieval evaluation with source-integrity checks","license":"MIT","engines":{"node":">=24"},"scripts":{"test":"node --test bench.test.mjs","benchmark":"node cli.mjs data/scifact results.json"}}
