@@ -15,3 +15,6 @@ node sourcekeep-eval.mjs ../sourcekeep data/scifact sourcekeep-results.json
 ```
 
 The output file must not already exist. The full generated report retains each query's rankings, scores, evidence hashes and offsets, input hashes, code hashes, timings and limitations. The inputs have separate attribution and licensing; see [DATA.md](DATA.md). Avoid publishing private documents or reports. This evaluation runs one query pass without explicit warmup; timing is environment-dependent and not directly comparable to EvidenceBench's indexed timings.
+
+
+The [compact per-query results](sourcekeep-scifact-summary.json) retain every query's metrics and ranked document IDs. They omit excerpt hashes, individual passage scores and query timings; the evaluator regenerates the full evidence report. The compact result is provided under CC BY-SA 4.0 where applicable to derived SciFact data.
