@@ -14,3 +14,11 @@ jobs:
         with:
           node-version: 24
       - run: npm test
+      - uses: actions/checkout@v6
+        with:
+          repository: shelbygrayman/sourcekeep
+          ref: ea45ee7459029f0306a4c82971d8a59291d6157b
+          path: sourcekeep-checkout
+      - run: node --test sourcekeep-eval.test.mjs
+        env:
+          SOURCEKEEP_DIR: sourcekeep-checkout
