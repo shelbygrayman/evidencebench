@@ -40,6 +40,10 @@ The CLI also accepts an existing BEIR-layout folder with `corpus.jsonl`, `querie
 
 BM25 uses k1=1.2 and b=0.75. Both baselines use the same Unicode tokenizer, stop words, 700-character non-overlapping passages and maximum-passage document score. The TF-IDF baseline is a log-TF × IDF sum, **not cosine-normalized TF-IDF**. There is no stemming. These choices are explicit so results can be reproduced, challenged, and improved.
 
+## Sourcekeep evaluation
+
+The [Sourcekeep keyword adapter](SOURCEKEEP-RESULTS.md) evaluates the actual Sourcekeep core against BEIR document labels. It is a Node research run with important app-limit and ranking differences; semantic and hybrid evaluation remain future work.
+
 ## Scope
 
 The first version evaluates lexical search only. Embeddings, hybrid fusion, mobile/browser performance and calibrated abstention are future work. SciFact labels document relevance for scientific claims; it does not measure general personal-note search, passage truth, or proof quality. Public test queries are externally authored but not contamination-proof or secret. Do not repeatedly tune on these test scores and still call them held-out results.
