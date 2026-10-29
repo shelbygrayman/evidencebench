@@ -9,7 +9,7 @@
     "node": ">=24"
   },
   "scripts": {
-    "test": "node --test bench.test.mjs compare-runs.test.mjs",
+    "test": "node --test bench.test.mjs compare-runs.test.mjs make-browser-fixture.test.mjs",
     "benchmark": "node cli.mjs data/scifact results.json"
   }
 }
