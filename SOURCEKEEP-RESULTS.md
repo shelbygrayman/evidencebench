@@ -18,3 +18,10 @@ The output file must not already exist. The full generated report retains each q
 
 
 The [compact per-query results](sourcekeep-scifact-summary.json) retain every query's metrics and ranked document IDs. They omit excerpt hashes, individual passage scores and query timings; the evaluator regenerates the full evidence report. The compact result is provided under CC BY-SA 4.0 where applicable to derived SciFact data.
+
+
+## Comparing complete rankings
+
+A [comparison](comparison-2026-10-29.json) of the published Sourcekeep keyword run against the earlier EvidenceBench BM25 report found **296 identical top-ten document rankings** out of 300 queries; all 300 top-ranked documents matched. For queries 50, 823, 985 and 1137, tied scores changed the order of two lower-ranked documents. Sourcekeep breaks ties using content-hash-based passage IDs; EvidenceBench uses dataset document IDs. This explains why equality of rounded aggregate metrics does not imply identical rankings. These reports were measured on different machines and cannot establish a latency comparison.
+
+To compare regenerated full reports, run `node compare-runs.mjs sourcekeep-results.json scifact-2026-10-25.json comparison.json`. The tool rejects different dataset hashes and mismatched queries; it reports ranking differences without treating them as relevance judgments or significance tests. The compact report is provided under CC BY-SA 4.0 where applicable to derived SciFact data.
