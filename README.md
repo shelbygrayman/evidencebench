@@ -44,9 +44,13 @@ BM25 uses k1=1.2 and b=0.75. Both baselines use the same Unicode tokenizer, stop
 
 The [Sourcekeep keyword adapter](SOURCEKEEP-RESULTS.md) evaluates the actual Sourcekeep core against BEIR document labels. It is a Node research run with important app-limit and ranking differences; semantic and hybrid evaluation remain future work.
 
+## Small model comparison
+
+[Keyword, semantic-only and hybrid retrieval on a small selected SciFact corpus](SEMANTIC-EXPERIMENT.md), including per-query results, reproducible inputs and limitations.
+
 ## Scope
 
-The first version evaluates lexical search only. Embeddings, hybrid fusion, mobile/browser performance and calibrated abstention are future work. SciFact labels document relevance for scientific claims; it does not measure general personal-note search, passage truth, or proof quality. Public test queries are externally authored but not contamination-proof or secret. Do not repeatedly tune on these test scores and still call them held-out results.
+The main full-SciFact benchmark evaluates lexical search. A separate small CPU experiment evaluates embeddings and hybrid fusion; mobile/browser performance and calibrated abstention are future work. SciFact labels document relevance for scientific claims; it does not measure general personal-note search, passage truth, or proof quality. Public test queries are externally authored but not contamination-proof or secret. Do not repeatedly tune on these test scores and still call them held-out results.
 
 Sourcekeep's tokenizer, chunking convention and BM25 formula informed this implementation; indexing and the benchmark harness are separate. Its timings are not Sourcekeep browser timings. This is a small open research tool, not an independent certification service.
 
