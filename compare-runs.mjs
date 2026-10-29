@@ -26,7 +26,7 @@ export function compareRuns(sourcekeep, baseline) {
     const other=byId.get(row.queryId);
     if(!other||other.queryHash!==row.queryHash) throw Error(`Missing or mismatched query: ${row.queryId}`);
     const a=row.results.map(r=>r.docId),b=other.results.map(r=>r.docId);
-    if((a[0]??null)===(b[0]??null))sameTop++;
+    if(a.length && b.length && a[0]===b[0])sameTop++;
     if(a.length!==b.length||a.some((id,i)=>id!==b[i])) differences.push({queryId:row.queryId,sourcekeep:a,baseline:b});
   }
   return {schema:'evidencebench.rank-comparison.v1',dataset:sourcekeep.dataset,queries:left.length,sameTop,identicalRankings:left.length-differences.length,differences,
